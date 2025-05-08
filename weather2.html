@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>室温</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #003973, #e5e5be);
+      color: white;
+      text-align: center;
+    }
+    .weather-box {
+      margin-top: 200px;
+    }
+    .temp {
+      font-size: 100px;
+    }
+    .description {
+      font-size: 80px;
+    }
+    .others {
+        font-size: 60px;
+    }
+    .spacer {
+      height: 160px;
+    }
+    .neta {
+        font-size: 40px;
+    }
+
+     html, body {
+        height: 100%;
+        margin: 0;
+     }
+
+     body {
+        background: linear-gradient(to bottom, #004e92, #fffbd5);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        font-family: sans-serif;
+        text-align: center;
+        color: white;
+     }
+
+    .room {
+        padding: 50px 0;
+    }
+
+    </style>
+</head>
+<body>
+    
+
+  <div class="weather-box">
+    <div class="temp">X°C</div>
+    <div class="description">Room1</div>
+    <div class="others">Humidity: 70%</div>
+    <div class="others">Pressure: 1013 hPa</div>
+  </div>
+
+
+  <div class="weather-box">
+    <div class="temp">Y°C</div>
+    <div class="description">Room2</div>
+    <div class="others">Humidity: 70%</div>
+    <div class="others">Pressure: 1013 hPa</div>
+  </div>
+
+  <div class="weather-box">
+    <div class="temp">Z°C</div>
+    <div class="description">Room3</div>
+    <div class="others">Humidity: 70%</div>
+    <div class="others">Pressure: 1013 hPa</div>
+  </div>
+
+  <div class="spacer"></div>
+
+  <div class="neta">
+  <a href="https://momuri.com">ここをクリック</a> </div>
+
+  <div class="spacer"></div>
+
+    <script>
+  function getRandomTemp(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  function updateTemperatures() {
+    const temps = document.querySelectorAll('.temp');
+    temps.forEach(temp => {
+      const randomTemp = getRandomTemp(0, 100000); //ランダム
+      temp.textContent = `${randomTemp}°C`;
+    });
+  }
+
+  // 最初に1回実行
+  updateTemperatures();
+
+  // 10秒ごとに更新
+  setInterval(updateTemperatures, 1000);
+</script>
+
+
+</body>
+</html>
+
